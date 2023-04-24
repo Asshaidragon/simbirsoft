@@ -34,3 +34,5 @@
 http://localhost:5050/allure-docker-service/projects/default/reports/latest/index.html
 
 Cтек: Python + Pytest + Allure + Selenium Grid
+
+P.S. Замечена плавающая проблема, иногда операции не появляются в списке транзакций.
