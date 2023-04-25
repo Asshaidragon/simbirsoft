@@ -2,7 +2,7 @@ from typing import Final
 
 from selenium.webdriver.chrome.webdriver import WebDriver
 
-from step.banking_operations import get_balance
+from pages.AccountPage import AccountPage
 
 CREDIT: Final[str] = "Credit"
 DEBIT: Final[str] = "Debit"
@@ -11,9 +11,9 @@ DEBIT: Final[str] = "Debit"
 def assert_displayed_balance_shows_expected_value(
     driver: WebDriver, amount: int
 ) -> None:
-    assert get_balance(driver) == amount, (
+    assert AccountPage(driver).get_current_balance() == amount, (
         "The current balance does not match the expected one.\n"
-        f"Expected: {amount}\nActual: {get_balance(driver)}"
+        f"Expected: {amount}\nActual: {AccountPage(driver).get_current_balance()}"
     )
 
 

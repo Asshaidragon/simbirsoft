@@ -17,10 +17,9 @@ class LoginPageLocators:
 
 
 class LoginPage(BasePage):
-    def click_on_customer_login_button(self) -> None:
+    def log_in_as_user(self, name: str) -> None:
+        self.go_to_url(LOGIN_PAGE_URL)
         self.click(LoginPageLocators.CUSTOMER_LOGIN_BUTTON)
-
-    def select_name_and_login(self, name: str) -> None:
         self.click(LoginPageLocators.USER_NAMES_SELECTORS)
         user_names: list = self.get_elements(LoginPageLocators.LIST_OF_USER_NAMES)
         user_names.pop(0)

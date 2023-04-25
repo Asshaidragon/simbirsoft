@@ -16,7 +16,7 @@ class TransactionPage(BasePage):
         for _ in range(5):
             try:
                 return self.get_elements(TransactionPageLocators.LIST_WITH_TRANSACTION)
-            except TimeoutException as ex:
+            except TimeoutException:
                 self.driver.refresh()
 
         raise AssertionError("The transaction list is empty")
